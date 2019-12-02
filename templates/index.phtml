@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer src="./js/index.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta charset="utf-8"/>
+        <title>Shopping List</title>
+        <style>
+
+            .container {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            h1 {
+                text-align: center;
+                color: #000000;
+                font-size: 3rem;
+                margin: 30px 0;
+            }
+
+            #list {
+                width: 40%;
+                margin: 0 auto;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Shopping List</h1>
+        <div id="list">
+            <?php require('partials/ItemList.phtml')?>
+        </div>
+    </div>
+    </body>
+</html>
