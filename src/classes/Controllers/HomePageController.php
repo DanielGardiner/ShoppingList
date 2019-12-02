@@ -26,6 +26,5 @@ class HomePageController
     {
         $allItems = $this->model->getAllItems();
         $this->view->render($response, 'index.phtml', ['items' => $allItems]);
-//        return $response->withJson($allItems);
     }
 }
