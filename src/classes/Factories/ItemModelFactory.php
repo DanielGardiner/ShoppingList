@@ -10,7 +10,7 @@ class ItemModelFactory
 {
     public function __invoke($container)
     {
-        $db = $container['db'];
+        $db = $container->get('db');
         return new ItemModel($db);
     }
 }

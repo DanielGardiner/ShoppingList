@@ -5,6 +5,7 @@ namespace Tests\Factories;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use ShoppingList\Factories\ItemModelFactory;
+use ShoppingList\Models\ItemModel;
 use Slim\Exception\ContainerException;
 
 class ItemModelFactoryTest extends TestCase
@@ -14,8 +15,9 @@ class ItemModelFactoryTest extends TestCase
         $db = $this->createMock(\PDO::class);
         $container = $this->createMock(ContainerInterface::class);
         $container->method('get')->willReturn($db);
-        $case = new ItemModelFactory($container);
-        $expected = ItemModelFactory::class;
+        $itemModelFactory = new ItemModelFactory();
+        $case = $itemModelFactory($container);
+        $expected = ItemModel::class;
         $this->assertInstanceOf($expected, $case);
     }
 }
