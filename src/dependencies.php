@@ -1,6 +1,7 @@
 <?php
 
 use ShoppingList\Controllers\HomePageControllerFactory;
+use ShoppingList\Factories\AddItemControllerFactory;
 use ShoppingList\Factories\ItemModelFactory;
 use Slim\App;
 
@@ -36,4 +37,6 @@ return function (App $app) {
     $container['ItemModel'] = new \ShoppingList\Factories\ItemModelFactory();
 
     $container['HomePageController'] = new \ShoppingList\Factories\HomePageControllerFactory();
+
+    $container['AddItemController'] = new AddItemControllerFactory();
 };
