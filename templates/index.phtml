@@ -19,16 +19,35 @@
                 margin: 30px 0;
             }
 
-            #list {
+            #list, form {
                 width: 40%;
                 margin: 0 auto;
             }
+
+            #add-item-row {
+                width:90%;
+            }
+
 
         </style>
     </head>
     <body>
     <div class="container">
         <h1>Shopping List</h1>
+        <form>
+            <div class="form-group">
+                <div id="add-item-row" class="row">
+                    <div class="col-11">
+                        <input type="email" class="form-control" placeholder="Add item">
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+<!--                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+        </form>
+
         <div id="list">
             <?php require('partials/ItemList.phtml')?>
         </div>
