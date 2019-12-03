@@ -10,8 +10,8 @@ class HomePageControllerFactory
 {
     public function __invoke($container)
     {
-        $model = $container['ItemModel'];
-        $view = $container['renderer'];
+        $model = $container->get('ItemModel');
+        $view = $container->get('renderer');
 
         return new HomePageController($model, $view);
     }
