@@ -25,11 +25,11 @@ class AddItemController
     {
         $userAddedItem = $request->getParsedBody();
 
-        if (ValidateItem::validateItem($userAddedItem)) {
+        if (ValidateItem::validateItem($userAddedItem['userInput'])) {
             $this->model->addItem($userAddedItem['userInput']);
-            return $response->withJson(["success" => true]);
+            return $response->withJson(["success" => true], 200);
         } else {
-            return $response->withJson(["success" => false]);
+            return $response->withJson(["success" => false], 200);
         }
     }
 }

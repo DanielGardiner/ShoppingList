@@ -25,7 +25,7 @@ return function (App $app) {
 
     // database
     $container['db'] = function (): \PDO {
-        $db = new \PDO('mysql:host=127.0.0.1;dbname=ShoppingList', 'root', 'password');
+        $db = new \PDO('mysql:host=127.0.0.1;dbname=ShoppingList2', 'root', 'password');
 
         $db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 
