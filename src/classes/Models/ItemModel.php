@@ -23,4 +23,10 @@ class ItemModel
         $query->execute();
         return $query->fetchAll();
     }
+
+    public function addItem($item) {
+        $query = $this->db->prepare("INSERT INTO `Items`(`item`) VALUES (:item);");
+        $query->bindParam(':item', $item);
+        return $query->execute();
+    }
 }

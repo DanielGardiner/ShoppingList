@@ -1,6 +1,7 @@
 <?php
 
 use ShoppingList\Controllers\HomePageControllerFactory;
+use ShoppingList\Factories\AddItemControllerFactory;
 use ShoppingList\Factories\ItemModelFactory;
 use Slim\App;
 
@@ -24,7 +25,7 @@ return function (App $app) {
 
     // database
     $container['db'] = function (): \PDO {
-        $db = new \PDO('mysql:host=127.0.0.1;dbname=ShoppingList', 'root', 'password');
+        $db = new \PDO('mysql:host=127.0.0.1;dbname=ShoppingList2', 'root', 'password');
 
         $db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 
@@ -36,4 +37,6 @@ return function (App $app) {
     $container['ItemModel'] = new \ShoppingList\Factories\ItemModelFactory();
 
     $container['HomePageController'] = new \ShoppingList\Factories\HomePageControllerFactory();
+
+    $container['AddItemController'] = new AddItemControllerFactory();
 };

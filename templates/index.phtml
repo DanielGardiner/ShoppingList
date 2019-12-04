@@ -19,16 +19,39 @@
                 margin: 30px 0;
             }
 
-            #list {
+            #list, form, #error-message {
                 width: 40%;
                 margin: 0 auto;
             }
+
+            #error-message {
+                color: red;
+            }
+
+            #add-item-row {
+                width:90%;
+            }
+
 
         </style>
     </head>
     <body>
     <div class="container">
         <h1>Shopping List</h1>
+        <form>
+            <div class="form-group">
+                <div id="add-item-row" class="row">
+                    <div class="col-11">
+                        <input id="user-item" type="text" class="form-control" placeholder="Add item">
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="error-message"></div>
+
         <div id="list">
             <?php require('partials/ItemList.phtml')?>
         </div>
