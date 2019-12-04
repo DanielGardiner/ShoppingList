@@ -27,9 +27,9 @@ class AddItemController
 
         if (ValidateItem::validateItem($userAddedItem['userInput'])) {
             $this->model->addItem($userAddedItem['userInput']);
-            return $response->withJson(["success" => true], 200);
+            return $response->withJson(["success" => true]);
         } else {
-            return $response->withJson(["success" => false], 200);
+            return $response->withJson(["success" => false]);
         }
     }
 }
