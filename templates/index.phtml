@@ -19,9 +19,13 @@
                 margin: 30px 0;
             }
 
-            #list, form {
+            #list, form, #error-message {
                 width: 40%;
                 margin: 0 auto;
+            }
+
+            #error-message {
+                color: red;
             }
 
             #add-item-row {
@@ -38,15 +42,15 @@
             <div class="form-group">
                 <div id="add-item-row" class="row">
                     <div class="col-11">
-                        <input type="email" class="form-control" placeholder="Add item">
+                        <input id="user-item" type="text" class="form-control" placeholder="Add item">
                     </div>
                     <div class="col-1">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-<!--                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
             </div>
         </form>
+        <div id="error-message"></div>
 
         <div id="list">
             <?php require('partials/ItemList.phtml')?>

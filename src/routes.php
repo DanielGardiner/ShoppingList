@@ -9,4 +9,5 @@ return function (App $app) {
 
     $app->get('/','HomePageController');
 
+    $app->post('/api/AddItem','AddItemController');
 };
